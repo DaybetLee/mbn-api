@@ -10,6 +10,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  console.log(req.body);
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
   new User({ name: req.body.name }).save().then((user) => res.send(user));
