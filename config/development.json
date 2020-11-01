@@ -1,0 +1,4 @@
+{
+    "smtp":{"user":"daybet.test@gmail.com","pass":"Whatev3r!"},
+    "secretKey":"secret123"
+}

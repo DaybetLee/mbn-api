@@ -4,6 +4,11 @@ const winston = require("../utils/winston");
 module.exports = mongoose
   .connect(
     "mongodb+srv://admin:P@55w0rd123@mbncluster.7eptk.mongodb.net/MBNCluster?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useFindAndModify: false,
+      useCreateIndex: true,
+    }
   )
   .then(() => winston.info("MongoDb Connected..."));

@@ -4,3 +4,382 @@
 2020-10-29 00:12:37 -info- MongoDb Connected...
 2020-10-29 00:12:43 -info- Message send: %s <1f886147-2de8-1c68-bd8b-d15a64f351a8@gmail.com>
 2020-10-29 00:12:43 -info- Preview URL: %s false
+2020-10-31 01:50:43 -info- Listen on 10443
+2020-10-31 01:50:44 -info- MongoDb Connected...
+2020-10-31 01:55:56 -info- Server started http://192.168.1.9:10443
+2020-10-31 01:55:57 -info- MongoDb Connected...
+2020-10-31 13:02:08 -info- Server started http://192.168.1.1:10443
+2020-10-31 13:02:08 -info- MongoDb Connected...
+2020-10-31 13:03:23 -info- Message send: %s <32f0237f-4b29-ff64-241b-08b89e0e1ff4@gmail.com>
+2020-10-31 13:03:23 -info- Preview URL: %s false
+2020-10-31 13:14:55 -info- Server started http://192.168.1.1:10443
+2020-10-31 13:14:55 -info- MongoDb Connected...
+2020-10-31 13:39:20 -info- Server started http://192.168.1.1:10443
+2020-10-31 13:39:20 -info- MongoDb Connected...
+2020-10-31 13:52:42 -info- Server started http://192.168.1.1:10443
+2020-10-31 13:52:43 -info- MongoDb Connected...
+2020-10-31 13:53:13 -info- Server started http://192.168.1.1:10443
+2020-10-31 13:53:13 -info- MongoDb Connected...
+2020-10-31 13:53:32 -info- Server started http://192.168.1.1:10443
+2020-10-31 13:53:32 -info- MongoDb Connected...
+2020-10-31 14:48:29 -error- uncaughtException: Router.use() requires a middleware function but got a Object
+TypeError: Router.use() requires a middleware function but got a Object
+    at Function.use (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:458:13)
+    at Function.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\application.js:220:21)
+    at Array.forEach (<anonymous>)
+    at Function.use (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\application.js:217:7)
+    at module.exports (D:\Documents\School\10. IoT\MailBoxNotification\startups\routes.js:12:7)
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\index.js:8:29)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+2020-10-31 14:49:13 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:49:13 -info- MongoDb Connected...
+2020-10-31 14:50:14 -error- TypeError: Joi.String is not a function
+    at validate (D:\Documents\School\10. IoT\MailBoxNotification\models\device.js:18:14)
+    at D:\Documents\School\10. IoT\MailBoxNotification\routes\device.js:16:21
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:112:3)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:47:12)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:317:13)
+2020-10-31 14:50:41 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:50:42 -info- MongoDb Connected...
+2020-10-31 14:52:58 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:52:58 -info- MongoDb Connected...
+2020-10-31 14:53:35 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:53:35 -info- MongoDb Connected...
+2020-10-31 14:53:41 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:53:41 -info- MongoDb Connected...
+2020-10-31 14:54:12 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:54:12 -info- MongoDb Connected...
+2020-10-31 14:54:14 -error- unhandledRejection: Invalid status code: {
+  _id: 5f9d0a159ee5ba04d06394e2,
+  mac: '80:7D:3A:69:2E:09',
+  psk: '$2b$10$C4ZGZApcLCebyxAuJO0rDOPwXkE130/oYauPMV5gqGhLU5d4FtRlW',
+  __v: 0
+}
+RangeError [ERR_HTTP_INVALID_STATUS_CODE]: Invalid status code: {
+  _id: 5f9d0a159ee5ba04d06394e2,
+  mac: '80:7D:3A:69:2E:09',
+  psk: '$2b$10$C4ZGZApcLCebyxAuJO0rDOPwXkE130/oYauPMV5gqGhLU5d4FtRlW',
+  __v: 0
+}
+    at ServerResponse.writeHead (_http_server.js:248:11)
+    at ServerResponse._implicitHeader (_http_server.js:239:8)
+    at write_ (_http_outgoing.js:642:9)
+    at ServerResponse.end (_http_outgoing.js:753:5)
+    at ServerResponse.send (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\response.js:221:10)
+    at ServerResponse.json (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\response.js:267:15)
+    at ServerResponse.send (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\response.js:158:21)
+    at D:\Documents\School\10. IoT\MailBoxNotification\routes\device.js:30:38
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+2020-10-31 14:54:35 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:54:35 -info- MongoDb Connected...
+2020-10-31 14:55:14 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:55:14 -info- MongoDb Connected...
+2020-10-31 14:56:00 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:56:00 -info- MongoDb Connected...
+2020-10-31 14:56:55 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:56:55 -info- MongoDb Connected...
+2020-10-31 14:59:41 -info- Server started http://192.168.1.1:10443
+2020-10-31 14:59:42 -info- MongoDb Connected...
+2020-10-31 15:33:10 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:33:10 -info- MongoDb Connected...
+2020-10-31 15:33:13 -error- TypeError: Device.find(...).sort(...).selected(...).then is not a function
+    at D:\Documents\School\10. IoT\MailBoxNotification\routes\device.js:13:6
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:112:3)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:47:12)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:317:13)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:284:7
+2020-10-31 15:33:24 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:33:24 -error- TypeError: Device.find(...).sort(...).selected(...).then is not a function
+    at D:\Documents\School\10. IoT\MailBoxNotification\routes\device.js:13:6
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:112:3)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:47:12)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:317:13)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:284:7
+2020-10-31 15:33:24 -info- MongoDb Connected...
+2020-10-31 15:33:25 -error- TypeError: Device.find(...).sort(...).selected(...).then is not a function
+    at D:\Documents\School\10. IoT\MailBoxNotification\routes\device.js:13:6
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:112:3)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:47:12)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:317:13)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:284:7
+2020-10-31 15:33:33 -error- TypeError: Device.find(...).sort(...).selected(...).then is not a function
+    at D:\Documents\School\10. IoT\MailBoxNotification\routes\device.js:13:6
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:112:3)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:47:12)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:317:13)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:284:7
+2020-10-31 15:33:34 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:33:34 -info- MongoDb Connected...
+2020-10-31 15:33:36 -error- TypeError: Device.find(...).sort(...).selected(...).then is not a function
+    at D:\Documents\School\10. IoT\MailBoxNotification\routes\device.js:13:6
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:112:3)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:47:12)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:317:13)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:284:7
+2020-10-31 15:34:02 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:34:02 -info- MongoDb Connected...
+2020-10-31 15:34:03 -error- TypeError: Device.find(...).sort(...).selected(...).then is not a function
+    at D:\Documents\School\10. IoT\MailBoxNotification\routes\device.js:13:6
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:112:3)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:47:12)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at trim_prefix (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:317:13)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:284:7
+2020-10-31 15:34:39 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:34:39 -info- MongoDb Connected...
+2020-10-31 15:34:54 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:34:54 -info- MongoDb Connected...
+2020-10-31 15:35:05 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:35:05 -info- MongoDb Connected...
+2020-10-31 15:35:12 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:35:12 -info- MongoDb Connected...
+2020-10-31 15:35:26 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:35:26 -info- MongoDb Connected...
+2020-10-31 15:37:14 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:37:14 -info- MongoDb Connected...
+2020-10-31 15:37:38 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:37:38 -info- MongoDb Connected...
+2020-10-31 15:37:47 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:37:47 -info- MongoDb Connected...
+2020-10-31 15:37:55 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:37:55 -info- MongoDb Connected...
+2020-10-31 15:39:37 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:39:37 -info- MongoDb Connected...
+2020-10-31 15:39:51 -info- Server started http://192.168.1.1:10443
+2020-10-31 15:39:51 -info- MongoDb Connected...
+2020-11-01 08:35:06 -info- Server started http://192.168.1.1:10443
+2020-11-01 08:35:07 -info- MongoDb Connected...
+2020-11-01 08:35:58 -info- Server started http://192.168.1.1:10443
+2020-11-01 08:35:58 -info- MongoDb Connected...
+2020-11-01 09:34:32 -info- Server started http://192.168.1.1:10443
+2020-11-01 09:34:33 -info- MongoDb Connected...
+2020-11-01 09:44:31 -error- uncaughtException: Cannot access 'config' before initialization
+ReferenceError: Cannot access 'config' before initialization
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\routes\nodemailer.js:4:24)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\startups\routes.js:4:20)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\index.js:8:1)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+2020-11-01 09:45:27 -error- uncaughtException: Cannot access 'config' before initialization
+ReferenceError: Cannot access 'config' before initialization
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\routes\nodemailer.js:4:24)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\startups\routes.js:4:20)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\index.js:8:1)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+2020-11-01 09:47:07 -info- Server started http://192.168.1.1:10443
+2020-11-01 09:47:07 -info- MongoDb Connected...
+2020-11-01 09:47:37 -info- Server started http://192.168.1.1:10443
+2020-11-01 09:47:37 -info- MongoDb Connected...
+2020-11-01 09:48:34 -info- Message send: %s <2b842c6c-45d8-f517-2d68-5d76c8407a0c@gmail.com>
+2020-11-01 09:48:34 -info- Preview URL: %s false
+2020-11-01 10:26:46 -info- Server started http://192.168.1.1:10443
+2020-11-01 10:26:47 -info- MongoDb Connected...
+2020-11-01 10:28:30 -info- Server started http://192.168.1.1:10443
+2020-11-01 10:28:30 -info- MongoDb Connected...
+2020-11-01 10:28:36 -info- Message send: %s <6994e743-e7e4-b6a0-e704-4a00983e83d8@DESKTOP-N8V0H9R>
+2020-11-01 10:28:36 -info- Preview URL: %s false
+2020-11-01 10:29:14 -info- Server started http://192.168.1.1:10443
+2020-11-01 10:29:14 -info- MongoDb Connected...
+2020-11-01 10:30:34 -info- Server started http://192.168.1.1:10443
+2020-11-01 10:30:35 -info- MongoDb Connected...
+2020-11-01 10:30:40 -info- Message send: %s <2ffd75ce-8c61-84c7-8763-04044b4e410e@gmail.com>
+2020-11-01 10:30:40 -info- Preview URL: %s false
+2020-11-01 10:32:29 -info- Server started http://192.168.1.1:10443
+2020-11-01 10:32:29 -info- MongoDb Connected...
+2020-11-01 10:34:14 -info- Server started http://192.168.1.1:10443
+2020-11-01 10:34:14 -info- MongoDb Connected...
+2020-11-01 10:38:04 -info- Server started http://192.168.1.1:10443
+2020-11-01 10:38:04 -info- MongoDb Connected...
+2020-11-01 11:19:35 -info- Server started http://192.168.1.1:10443
+2020-11-01 11:19:35 -info- MongoDb Connected...
+2020-11-01 19:13:13 -info- Server started http://192.168.1.1:10443
+2020-11-01 19:13:13 -info- MongoDb Connected...
+2020-11-01 19:20:04 -info- Server started http://192.168.1.1:10443
+2020-11-01 19:20:04 -info- MongoDb Connected...
+2020-11-01 19:21:04 -info- Server started http://192.168.1.1:10443
+2020-11-01 19:21:05 -info- MongoDb Connected...
+2020-11-01 19:23:01 -info- Server started http://192.168.1.1:10443
+2020-11-01 19:23:01 -info- MongoDb Connected...
+2020-11-01 19:25:53 -info- Server started http://192.168.1.1:10443
+2020-11-01 19:25:54 -info- MongoDb Connected...
+2020-11-01 19:26:03 -info- Server started http://192.168.1.1:10443
+2020-11-01 19:26:03 -info- MongoDb Connected...
+2020-11-01 19:26:50 -error- uncaughtException: requrie is not defined
+ReferenceError: requrie is not defined
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\middlewares\deviceAA.js:1:13)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\routes\nodemailer.js:7:18)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\startups\routes.js:4:20)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+2020-11-01 19:27:49 -error- uncaughtException: Cannot find module 'jwt'
+Require stack:
+- D:\Documents\School\10. IoT\MailBoxNotification\middlewares\deviceAA.js
+- D:\Documents\School\10. IoT\MailBoxNotification\routes\nodemailer.js
+- D:\Documents\School\10. IoT\MailBoxNotification\startups\routes.js
+- D:\Documents\School\10. IoT\MailBoxNotification\index.js
+Error: Cannot find module 'jwt'
+Require stack:
+- D:\Documents\School\10. IoT\MailBoxNotification\middlewares\deviceAA.js
+- D:\Documents\School\10. IoT\MailBoxNotification\routes\nodemailer.js
+- D:\Documents\School\10. IoT\MailBoxNotification\startups\routes.js
+- D:\Documents\School\10. IoT\MailBoxNotification\index.js
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:966:15)
+    at Function.Module._load (internal/modules/cjs/loader.js:842:27)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\middlewares\deviceAA.js:1:13)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+    at Module.require (internal/modules/cjs/loader.js:1026:19)
+    at require (internal/modules/cjs/helpers.js:72:18)
+    at Object.<anonymous> (D:\Documents\School\10. IoT\MailBoxNotification\routes\nodemailer.js:7:18)
+    at Module._compile (internal/modules/cjs/loader.js:1138:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1158:10)
+    at Module.load (internal/modules/cjs/loader.js:986:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:879:14)
+2020-11-01 19:28:02 -info- Server started http://192.168.1.1:10443
+2020-11-01 19:28:02 -info- MongoDb Connected...
+2020-11-01 19:28:48 -info- Server started http://192.168.1.1:10443
+2020-11-01 19:28:48 -info- MongoDb Connected...
+2020-11-01 19:29:18 -error- JsonWebTokenError: invalid signature
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\jsonwebtoken\verify.js:133:19
+    at getSecret (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\jsonwebtoken\verify.js:90:14)
+    at Object.module.exports [as verify] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\jsonwebtoken\verify.js:94:10)
+    at module.exports (D:\Documents\School\10. IoT\MailBoxNotification\middlewares\deviceAA.js:9:23)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:137:13)
+    at Route.dispatch (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\route.js:112:3)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+    at Layer.handle [as handle_request] (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\layer.js:95:5)
+    at D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:281:22
+    at Function.process_params (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:335:12)
+    at next (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:275:10)
+    at Function.handle (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:174:3)
+    at router (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express\lib\router\index.js:47:12)
+    at newFn (D:\Documents\School\10. IoT\MailBoxNotification\node_modules\express-async-errors\index.js:16:20)
+2020-11-01 19:29:32 -info- Message send: %s <6a4fa5e0-0678-de9f-fef5-59f79d80dc25@gmail.com>
+2020-11-01 19:29:32 -info- Preview URL: %s false
+2020-11-01 19:35:50 -info- Message send: %s <62b9542a-158e-69e3-55ad-9c9fc9998b47@gmail.com>
+2020-11-01 19:35:50 -info- Preview URL: %s false
+2020-11-01 22:51:41 -info- Server started http://192.168.1.1:10443
+2020-11-01 22:51:41 -info- MongoDb Connected...
+2020-11-01 22:52:00 -info- Message send: %s <b24cb1c4-629c-f7c8-ea6d-364972445d5d@gmail.com>
+2020-11-01 22:52:00 -info- Preview URL: %s false

@@ -1,9 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
-const winston = require("../utils/winston");
+const config = require("config");
 
-router.post("/", async (req, res) => {
+const winston = require("../utils/winston");
+const deviceAA = require("../middlewares/deviceAA");
+
+router.post("/", deviceAA, async (req, res) => {
   const output = "You have recieve mail/parcel!";
 
   let transporter = nodemailer.createTransport({
@@ -11,13 +14,13 @@ router.post("/", async (req, res) => {
     port: 587,
     secure: false,
     auth: {
-      user: `daybet.test@gmail.com`,
-      pass: `Whatev3r!`,
+      user: config.get("smtp.user"),
+      pass: config.get("smtp.pass"),
     },
   });
 
   let info = await transporter.sendMail({
-    from: '"Real MailBox Alert" <daybet.test@gmail.com>',
+    from: `"Real MailBox Alert" <${config.get("smtp.user")}>`,
     to: `daybetlee@gmail.com`,
     subject: `Real MailBox Alert`,
     text: "Real MailBox Alert",
