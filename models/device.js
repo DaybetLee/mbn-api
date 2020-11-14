@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 
 const deviceSchema = new monsgoose.Schema({
+  name: { type: String, maxlength: 255, default: "MailSensor" },
   mac: {
     type: String,
     match: /^([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2})$/,
@@ -12,16 +13,18 @@ const deviceSchema = new monsgoose.Schema({
     required: true,
   },
   psk: { type: String, maxlength: 255, minlength: 8, required: true },
+  notify: { type: Boolean },
 });
 
 deviceSchema.methods.generateAuthToken = function () {
-  return jwt.sign({ _id: this._id }, config.get("secretKey"));
+  return jwt.sign({ notify: this.notify }, config.get("secretKey"));
 };
 
 const Device = monsgoose.model("device", deviceSchema);
 
-function validate(body) {
+const validate = (body) => {
   const schema = Joi.object({
+    name: Joi.string().max(255),
     mac: Joi.string()
       .insensitive()
       .pattern(
@@ -29,9 +32,11 @@ function validate(body) {
       )
       .required(),
     psk: Joi.string().min(8).max(255).required(),
+    notify: Joi.bool(),
   });
   return schema.validate(body);
-}
+};
 
 exports.Device = Device;
 exports.validate = validate;
+exports.deviceSchema = deviceSchema;

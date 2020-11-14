@@ -4,13 +4,15 @@ const error = require("../middlewares/error");
 const nodemailer = require("../routes/nodemailer");
 const user = require("../routes/user");
 const device = require("../routes/device");
-const deviceAuth = require("../routes/deviceAuth");
+const userAuth = require("../routes/userAuth");
+const verify = require("../routes/verify");
 
 module.exports = (app) => {
   app.use(express.json());
-  app.use("/", nodemailer);
+  app.use("/api/mailer", nodemailer);
   app.use("/api/user", user);
   app.use("/api/device", device);
-  app.use("/api/auth", deviceAuth);
+  app.use("/api/login", userAuth);
+  app.use("/api/verify", verify);
   app.use(error);
 };
