@@ -2,25 +2,16 @@ const express = require("express");
 const router = express.Router();
 const nodemailer = require("nodemailer");
 const config = require("config");
-const bcrypt = require("bcrypt");
 
 const winston = require("../utils/winston");
 const { User } = require("../models/user");
 const decrypt = require("../middlewares/decrypt");
-const { Device, validate } = require("../models/device");
+const deviceAuth = require("../middlewares/deviceAuth");
 
-router.post("/alert", decrypt, async (req, res) => {
-  const { error } = validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+router.post("/alert", [decrypt, deviceAuth], async (req, res) => {
+  const user = await User.findOne({ "devices._id": req.device._id });
+  if (!user) return res.status(404).send("User not found");
 
-  const device = await Device.findOne({ mac: req.body.mac });
-  if (!device) return res.status(400).send("Device not registered");
-  if (!device.notify) return res.status(405).send("Method not allowed");
-
-  const psk = await bcrypt.compare(req.body.psk, device.psk);
-  if (!psk) return res.status(400).send("Invalid key");
-
-  const user = await User.findOne({ "devices._id": device._id });
   const output = "You have recieve mail/parcel!";
 
   let transporter = nodemailer.createTransport({
