@@ -2,24 +2,15 @@ const express = require("express");
 const router = express.Router();
 const { User } = require("../models/user");
 const Joi = require("joi");
-const jpc = require("joi-password-complexity");
+
 const bcrypt = require("bcrypt");
 
 const validate = (body) => {
-  const option = {
-    min: 10,
-    max: 255,
-    lowerCase: 1,
-    upperCase: 1,
-    numeric: 1,
-    symbol: 1,
-    requirementCount: 4,
-  };
   const schema = Joi.object({
     email: Joi.string()
       .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
       .required(),
-    password: jpc(option).required(),
+    password: Joi.string().required(),
   });
   return schema.validate(body);
 };

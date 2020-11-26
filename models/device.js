@@ -17,7 +17,9 @@ const deviceSchema = new monsgoose.Schema({
 });
 
 deviceSchema.methods.generateAuthToken = function () {
-  return jwt.sign({ notify: this.notify }, config.get("secretKey"));
+  return jwt.sign({ notify: this.notify }, config.get("secretKey"), {
+    expiresIn: "1h",
+  });
 };
 
 const Device = monsgoose.model("device", deviceSchema);

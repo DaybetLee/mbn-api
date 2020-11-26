@@ -3,6 +3,7 @@ const Joi = require("joi");
 const jpc = require("joi-password-complexity");
 const jwt = require("jsonwebtoken");
 const config = require("config");
+const moment = require("moment");
 
 const { deviceSchema } = require("./device");
 
@@ -33,13 +34,42 @@ const userSchema = new mongoose.Schema({
   devices: {
     type: [deviceSchema],
   },
+  history: {
+    type: [
+      new mongoose.Schema({
+        date: {
+          type: Date,
+          default: Date.now(),
+        },
+        message: { type: String, maxlength: 255 },
+        origin: { type: String, enum: ["Device", "System"] },
+      }),
+    ],
+  },
 });
 
 userSchema.methods.generateAuthToken = function () {
   return jwt.sign(
     { _id: this._id, verified: this.verified },
-    config.get("secretKey")
+    config.get("secretKey"),
+    { expiresIn: "1h" }
   );
+};
+
+userSchema.methods.historySort = function () {
+  const history = this.history;
+  return history
+    .sort((a, b) => moment(b.date) - moment(a.date))
+    .map((a) => {
+      return {
+        hourApart: moment().diff(a.date, "hours"),
+        dayApart: moment().diff(a.date, "days"),
+        date: new Date(a.date).toDateString(),
+        time: new Date(a.date).toLocaleTimeString(),
+        message: a.message,
+        origin: a.origin,
+      };
+    });
 };
 
 const User = mongoose.model("user", userSchema);

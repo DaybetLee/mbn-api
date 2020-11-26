@@ -29,6 +29,7 @@ router.post("/", [authentication, authorization], async (req, res) => {
       );
 
   const device = new Device({
+    name: req.body.name,
     mac: req.body.mac,
     psk: req.body.psk,
     notify: true,
@@ -40,6 +41,10 @@ router.post("/", [authentication, authorization], async (req, res) => {
   await User.findByIdAndUpdate(req.user._id, {
     $push: {
       devices: _.pick(device, ["_id", "mac", "psk", "notify"]),
+      history: {
+        message: `${device.name} has been added to list.`,
+        origin: "System",
+      },
     },
   });
 
@@ -93,9 +98,22 @@ router.delete(
   async (req, res) => {
     const device = await Device.findByIdAndRemove(req.params.id);
 
-    const user = await User.findOne({
-      "devices._id": req.params.id,
-    });
+    const user = await User.findOneAndUpdate(
+      {
+        "devices._id": req.params.id,
+      },
+      {
+        $push: {
+          history: {
+            message: `${device.name} has been deleted from list.`,
+            origin: "System",
+          },
+        },
+      }
+    );
+
+    console.log(Date.now());
+
     user.devices.id(req.params.id).remove();
     await user.save();
 
