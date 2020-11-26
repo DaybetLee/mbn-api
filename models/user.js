@@ -58,18 +58,16 @@ userSchema.methods.generateAuthToken = function () {
 
 userSchema.methods.historySort = function () {
   const history = this.history;
-  return history
-    .sort((a, b) => moment(b.date) - moment(a.date))
-    .map((a) => {
-      return {
-        hourApart: moment().diff(a.date, "hours"),
-        dayApart: moment().diff(a.date, "days"),
-        date: new Date(a.date).toDateString(),
-        time: new Date(a.date).toLocaleTimeString(),
-        message: a.message,
-        origin: a.origin,
-      };
-    });
+  return history.reverse().map((a) => {
+    return {
+      hourApart: moment().diff(a.date, "hours"),
+      dayApart: moment().diff(a.date, "days"),
+      date: new Date(a.date).toDateString(),
+      time: new Date(a.date).toLocaleTimeString(),
+      message: a.message,
+      origin: a.origin,
+    };
+  });
 };
 
 const User = mongoose.model("user", userSchema);

@@ -29,7 +29,7 @@ router.post("/", async (req, res) => {
 
   await user.save();
 
-  await user.updateOne(user._id, {
+  await User.updateOne(user._id, {
     $push: {
       history: {
         message: `User account created.`,

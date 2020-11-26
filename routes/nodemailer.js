@@ -39,7 +39,7 @@ router.post("/alert", [decrypt, deviceAuth], async (req, res) => {
   winston.info(`Message send: %s ${info.messageId}`);
   winston.info(`Preview URL: %s ${nodemailer.getTestMessageUrl(info)}`);
 
-  await user.updateOne(user._id, {
+  await User.updateOne(user._id, {
     $push: {
       history: {
         message: `${req.device.name} has received parcel.`,
