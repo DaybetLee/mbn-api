@@ -31,7 +31,10 @@ router.put("/", async (req, res) => {
     );
 
     return user
-      ? res.header("x-auth-token", user.generateAuthToken()).send(true)
+      ? res
+          .header("x-auth-token", user.generateAuthToken())
+          .header("access-control-expose-headers", "x-auth-token")
+          .send(true)
       : res.status(404).send("User not found");
   } catch (ex) {
     return res.status(404).send(false);
