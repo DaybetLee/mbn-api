@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   const email = await User.findOne({ email: req.body.email });
-  if (email) return res.status(400).send("Email taken");
+  if (email) return res.status(400).send(`${req.body.email} has been taken`);
 
   const user = new User(
     _.pick(req.body, ["firstName", "lastName", "email", "password"])
