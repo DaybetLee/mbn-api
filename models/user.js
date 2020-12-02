@@ -8,7 +8,16 @@ const moment = require("moment");
 const { deviceSchema } = require("./device");
 
 const userSchema = new mongoose.Schema({
-  name: {
+  firstName: {
+    type: String,
+    minlength: 3,
+    maxlength: 30,
+    trim: true,
+    required: true,
+    match: /^[\w\d]{3,30}$/,
+    set: (v) => v[0].toUpperCase() + v.substring(1).toLowerCase(),
+  },
+  lastName: {
     type: String,
     minlength: 3,
     maxlength: 30,
@@ -83,7 +92,8 @@ const validate = (body) => {
     requirementCount: 4,
   };
   const schema = Joi.object({
-    name: Joi.string().alphanum().max(255).required(),
+    firstName: Joi.string().alphanum().max(30).required(),
+    lastName: Joi.string().alphanum().max(30).required(),
     email: Joi.string()
       .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
       .required(),

@@ -18,23 +18,24 @@ router.put("/", async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
-  const decode = jwt.verify(req.body.token, config.get("secretKey"));
-
-  const user = await User.findByIdAndUpdate(
-    decode._id,
-    {
-      $set: {
-        verified: true,
+  try {
+    const decode = jwt.verify(req.body.token, config.get("secretKey"));
+    const user = await User.findByIdAndUpdate(
+      decode._id,
+      {
+        $set: {
+          verified: true,
+        },
       },
-    },
-    { new: true }
-  );
+      { new: true }
+    );
 
-  return user
-    ? res
-        .header("x-auth-token", user.generateAuthToken())
-        .send(_.pick(user, ["verified"]))
-    : res.status(404).send("User not found");
+    return user
+      ? res.header("x-auth-token", user.generateAuthToken()).send(true)
+      : res.status(404).send("User not found");
+  } catch (ex) {
+    return res.status(404).send(false);
+  }
 });
 
 module.exports = router;

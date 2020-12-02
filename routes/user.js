@@ -13,7 +13,7 @@ const winston = require("../utils/winston");
 
 router.get("/", [authentication, authorization], (req, res) => {
   User.find()
-    .sort("name")
+    .sort("firstName")
     .then((user) => res.send(user));
 });
 
@@ -24,22 +24,27 @@ router.post("/", async (req, res) => {
   const email = await User.findOne({ email: req.body.email });
   if (email) return res.status(400).send("Email taken");
 
-  const user = new User(_.pick(req.body, ["name", "email", "password"]));
+  const user = new User(
+    _.pick(req.body, ["firstName", "lastName", "email", "password"])
+  );
   user.password = await bcrypt.hash(user.password, await bcrypt.genSalt(10));
 
   await user.save();
 
-  await User.updateOne(user._id, {
-    $push: {
-      history: {
-        message: `User account created.`,
-        origin: "System",
+  await User.updateOne(
+    { _id: user._id },
+    {
+      $push: {
+        history: {
+          message: `User account created.`,
+          origin: "System",
+        },
       },
-    },
-  });
+    }
+  );
 
   const output = `
-  <p>Hi ${user.name},</p>
+  <p>Hi ${user.firstName} ${user.lastName},</p>
  <p>dummy.com/verify/${user.generateAuthToken()}</p>
     `;
 

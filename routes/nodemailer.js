@@ -14,7 +14,7 @@ router.post("/alert", [decrypt, deviceAuth], async (req, res) => {
   if (!user) return res.status(404).send("User not found");
 
   const output = `
-  <p>Hi ${user.name},</p>
+  <p>Hi ${user.firstName} ${user.lastName},</p>
  <p>${req.device.name} has received parcel.</p>
     `;
 
@@ -39,14 +39,17 @@ router.post("/alert", [decrypt, deviceAuth], async (req, res) => {
   winston.info(`Message send: %s ${info.messageId}`);
   winston.info(`Preview URL: %s ${nodemailer.getTestMessageUrl(info)}`);
 
-  await User.updateOne(user._id, {
-    $push: {
-      history: {
-        message: `${req.device.name} has received parcel.`,
-        origin: "Device",
+  await User.updateOne(
+    { _id: user._id },
+    {
+      $push: {
+        history: {
+          message: `${req.device.name} has received parcel.`,
+          origin: "Device",
+        },
       },
-    },
-  });
+    }
+  );
 
   res.send("1");
 });
@@ -55,7 +58,7 @@ router.post("/verify", [authentication], async (req, res) => {
   const user = await User.findById(req.user._id);
 
   const output = `
-  <p>Hi ${user.name},</p>
+  <p>Hi ${user.firstName} ${user.lastName},</p>
  <p>dummy.com/verify/${user.generateAuthToken()}</p>
     `;
 

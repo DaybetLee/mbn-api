@@ -38,15 +38,18 @@ router.post("/", [authentication, authorization], async (req, res) => {
 
   await device.save();
 
-  await User.findByIdAndUpdate(req.user._id, {
-    $push: {
-      devices: _.pick(device, ["_id", "mac", "psk", "notify"]),
-      history: {
-        message: `${device.name} has been added to list.`,
-        origin: "System",
+  await User.updateOne(
+    { _id: req.user._id },
+    {
+      $push: {
+        devices: _.pick(device, ["_id", "mac", "psk", "notify"]),
+        history: {
+          message: `${device.name} has been added to list.`,
+          origin: "System",
+        },
       },
-    },
-  });
+    }
+  );
 
   res.send(device);
 });
@@ -111,8 +114,6 @@ router.delete(
         },
       }
     );
-
-    console.log(Date.now());
 
     user.devices.id(req.params.id).remove();
     await user.save();
