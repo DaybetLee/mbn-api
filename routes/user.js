@@ -72,7 +72,12 @@ router.post("/", async (req, res) => {
   res
     .header("x-auth-token", user.generateAuthToken())
     .header("access-control-expose-headers", "x-auth-token")
-    .send(user.generateAuthToken());
+    .send(null);
+});
+
+router.get("/id", [authentication], async (req, res) => {
+  const user = User.findById(req.params.id);
+  return user ? res.send(user) : res.status(404).send("User Not Found");
 });
 
 router.delete("/:id", validateID, async (req, res) => {
