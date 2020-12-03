@@ -75,7 +75,7 @@ router.post("/", async (req, res) => {
     .send(null);
 });
 
-router.get("/id", [authentication], async (req, res) => {
+router.get("/:id", [authentication], async (req, res) => {
   const user = await User.findById(req.params.id);
   return user ? res.send(user) : res.status(404).send("User Not Found");
 });
