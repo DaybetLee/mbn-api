@@ -76,7 +76,7 @@ router.post("/", async (req, res) => {
 });
 
 router.get("/id", [authentication], async (req, res) => {
-  const user = User.findById(req.params.id);
+  const user = await User.findById(req.params.id);
   return user ? res.send(user) : res.status(404).send("User Not Found");
 });
 
