@@ -69,13 +69,59 @@ router.post("/", async (req, res) => {
   winston.info(`Message send: %s ${info.messageId}`);
   winston.info(`Preview URL: %s ${nodemailer.getTestMessageUrl(info)}`);
 
+  let token = user.generateAuthToken();
+
   res
-    .header("x-auth-token", user.generateAuthToken())
+    .header("x-auth-token", token)
     .header("access-control-expose-headers", "x-auth-token")
     .send(null);
 });
 
-router.get("/:id", [authentication], async (req, res) => {
+router.put("/:id", [authentication, validateID], async (req, res) => {
+  const { error } = validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+
+  const email = await User.findOne({ email: req.body.email });
+  const current = await User.findById(req.params.id);
+
+  if (email && current.email != email.email)
+    return res.status(400).send(`${req.body.email} has been taken`);
+
+  const password = await bcrypt.hash(
+    req.body.password,
+    await bcrypt.genSalt(10)
+  );
+
+  const user = await User.findByIdAndUpdate(
+    req.params.id,
+    {
+      $set: {
+        firstName: req.body.firstName || current.firstName,
+        lastName: req.body.lastName || current.lastName,
+        email: req.body.email || current.email,
+        password: password,
+        verified: false,
+      },
+    },
+    { new: true }
+  );
+
+  await User.updateOne(
+    { _id: req.params.id },
+    {
+      $push: {
+        history: {
+          message: `User profile information has been changed.`,
+          origin: "System",
+        },
+      },
+    }
+  );
+
+  return user ? res.send(user) : res.status(404).send("User Not Found");
+});
+
+router.get("/:id", [authentication, validateID], async (req, res) => {
   const user = await User.findById(req.params.id);
   return user ? res.send(user) : res.status(404).send("User Not Found");
 });

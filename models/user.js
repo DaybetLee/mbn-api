@@ -41,7 +41,19 @@ const userSchema = new mongoose.Schema({
   },
   verified: { type: Boolean, default: false },
   devices: {
-    type: [deviceSchema],
+    type: [
+      new mongoose.Schema({
+        name: { type: String, maxlength: 255, default: "MailSensor" },
+        mac: {
+          type: String,
+          match: /^([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2})$/,
+          uppercase: true,
+          required: true,
+        },
+        psk: { type: String, maxlength: 255, minlength: 8, required: true },
+        notify: { type: Boolean },
+      }),
+    ],
   },
   history: {
     type: [
