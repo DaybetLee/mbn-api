@@ -2,5 +2,5 @@
     "smtp":{"user":"daybet.test@gmail.com","pass":"Whatev3r!"},
     "secretKey":"jtb@r?vLEwbfn&3j",
     "AESKey":"E8A1F15D15E76AA67C571BD49783614F",
-    "domainUrl":"http://localhost:3000/"
+    "domainUrl":"http://localhost:3000"
 }
