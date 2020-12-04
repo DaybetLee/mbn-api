@@ -37,7 +37,7 @@ router.put("/", async (req, res) => {
           .send(null)
       : res.status(404).send("User not found");
   } catch (ex) {
-    return res.status(404).send(false);
+    return res.status(404).send(null);
   }
 });
 

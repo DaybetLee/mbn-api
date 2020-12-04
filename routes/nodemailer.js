@@ -59,7 +59,7 @@ router.post("/verify", [authentication], async (req, res) => {
 
   const output = `
   <p>Hi ${user.firstName} ${user.lastName},</p>
- <p>dummy.com/verify/${user.generateAuthToken()}</p>
+ <p>http://localhost:3000/verify/${user.generateAuthToken()}</p>
     `;
 
   let transporter = nodemailer.createTransport({
