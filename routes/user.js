@@ -45,7 +45,7 @@ router.post("/", async (req, res) => {
 
   const output = `
   <p>Hi ${user.firstName} ${user.lastName},</p>
- <p>dummy.com/verify/${user.generateAuthToken()}</p>
+  <p>${config.get("domainUrl")}/verify/${user.generateAuthToken()}</p>
     `;
 
   let transporter = nodemailer.createTransport({
