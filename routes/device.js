@@ -100,6 +100,7 @@ router.delete(
   [validateID, authentication, authorization],
   async (req, res) => {
     const device = await Device.findByIdAndRemove(req.params.id);
+    if (!device) return res.status(404).send("Device not found");
 
     const user = await User.findOneAndUpdate(
       {
@@ -118,9 +119,7 @@ router.delete(
     user.devices.id(req.params.id).remove();
     await user.save();
 
-    return device
-      ? res.send(_.pick(device, ["mac", "_id"]))
-      : res.status(404).send("Device not found");
+    res.send(_.pick(device, ["mac", "_id"]));
   }
 );
 
