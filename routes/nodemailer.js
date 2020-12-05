@@ -25,7 +25,7 @@ router.post("/alert", [decrypt, deviceAuth], async (req, res) => {
     }
   );
 
-  if (!req.device.notify) return res.status(405).send("Method not allowed");
+  if (!req.device.notify) return res.status(405).send("1");
 
   const output = `
   <p>Hi ${user.firstName} ${user.lastName},</p>
