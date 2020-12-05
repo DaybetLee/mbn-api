@@ -13,6 +13,20 @@ router.post("/alert", [decrypt, deviceAuth], async (req, res) => {
   const user = await User.findOne({ "devices._id": req.device._id });
   if (!user) return res.status(404).send("User not found");
 
+  await User.updateOne(
+    { _id: user._id },
+    {
+      $push: {
+        history: {
+          message: `${req.device.name} has received parcel.`,
+          origin: "Device",
+        },
+      },
+    }
+  );
+
+  if (!req.device.notify) return res.status(405).send("Method not allowed");
+
   const output = `
   <p>Hi ${user.firstName} ${user.lastName},</p>
  <p>${req.device.name} has received parcel.</p>
@@ -38,18 +52,6 @@ router.post("/alert", [decrypt, deviceAuth], async (req, res) => {
 
   winston.info(`Message send: %s ${info.messageId}`);
   winston.info(`Preview URL: %s ${nodemailer.getTestMessageUrl(info)}`);
-
-  await User.updateOne(
-    { _id: user._id },
-    {
-      $push: {
-        history: {
-          message: `${req.device.name} has received parcel.`,
-          origin: "Device",
-        },
-      },
-    }
-  );
 
   res.send("1");
 });

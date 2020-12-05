@@ -14,5 +14,5 @@ module.exports = async (req, res, next) => {
 
   req.device = device;
 
-  return device.notify ? next() : res.status(405).send("Method not allowed");
+  next();
 };

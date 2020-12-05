@@ -138,11 +138,11 @@ router.get("/:id/history", [authentication, validateID], async (req, res) => {
     : res.status(404).send("User Not Found");
 });
 
-router.get("/:id/device", [authentication, validateID], async (req, res) => {
-  console.log("hi");
-  const user = await User.findById(req.params.id);
+// router.get("/:id/device", [authentication, validateID], async (req, res) => {
+//   console.log("hi");
+//   const user = await User.findById(req.params.id);
 
-  return res.send(user);
-});
+//   return res.send(user);
+// });
 
 module.exports = router;
