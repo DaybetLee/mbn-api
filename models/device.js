@@ -4,7 +4,11 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 
 const deviceSchema = new monsgoose.Schema({
-  name: { type: String, maxlength: 255, default: "MailSensor" },
+  name: {
+    type: String,
+    maxlength: 255,
+    default: "MailSensor" + (Math.floor(Math.random() * (999 - 0 + 1)) + 0),
+  },
   mac: {
     type: String,
     match: /^([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2}):([0-9A-F]{2})$/,

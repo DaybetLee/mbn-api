@@ -11,11 +11,11 @@ const authorization = require("../middlewares/authorization");
 const validateID = require("../middlewares/validateID");
 const winston = require("../utils/winston");
 
-router.get("/", [authentication, authorization], (req, res) => {
-  User.find()
-    .sort("firstName")
-    .then((user) => res.send(user));
-});
+// router.get("/", [authentication, authorization], (req, res) => {
+//   User.find()
+//     .sort("firstName")
+//     .then((user) => res.send(user));
+// });
 
 router.post("/", async (req, res) => {
   const { error } = validate(req.body);
@@ -136,6 +136,13 @@ router.get("/:id/history", [authentication, validateID], async (req, res) => {
   return user
     ? res.send(user.historySort())
     : res.status(404).send("User Not Found");
+});
+
+router.get("/:id/device", [authentication, validateID], async (req, res) => {
+  console.log("hi");
+  const user = await User.findById(req.params.id);
+
+  return res.send(user);
 });
 
 module.exports = router;

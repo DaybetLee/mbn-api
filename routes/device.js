@@ -9,12 +9,12 @@ const validateID = require("../middlewares/validateID");
 const authentication = require("../middlewares/authentication");
 const authorization = require("../middlewares/authorization");
 
-router.get("/", (req, res) => {
-  Device.find()
-    .sort("mac")
-    .select("-psk")
-    .then((device) => res.send(device));
-});
+// router.get("/", (req, res) => {
+//   Device.find()
+//     .sort("mac")
+//     .select("-psk")
+//     .then((device) => res.send(device));
+// });
 
 router.post("/", [authentication, authorization], async (req, res) => {
   const { error } = validate(req.body);
@@ -42,7 +42,7 @@ router.post("/", [authentication, authorization], async (req, res) => {
     { _id: req.user._id },
     {
       $push: {
-        devices: _.pick(device, ["_id", "mac", "psk", "notify"]),
+        devices: _.pick(device, ["_id", "name", "mac", "psk", "notify"]),
         history: {
           message: `${device.name} has been added to list.`,
           origin: "System",
