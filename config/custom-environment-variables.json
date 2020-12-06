@@ -1,0 +1,6 @@
+{
+    "smtp":{"user":"smtp_user","pass":"smtp_pass"},
+    "secretKey":"secretKey",
+    "AESKey":"AESKey",
+    "domainUrl":"domainUrl"
+}
