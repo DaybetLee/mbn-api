@@ -73,23 +73,23 @@ userSchema.methods.generateAuthToken = function () {
   return jwt.sign(
     { _id: this._id, verified: this.verified },
     config.get("secretKey"),
-    { expiresIn: 60 * 10 }
+    { expiresIn: "1h" }
   );
 };
 
-// userSchema.methods.historySort = function () {
-//   const history = this.history;
-//   return history.reverse().map((a) => {
-//     return {
-//       hourApart: moment().diff(a.date, "hours"),
-//       dayApart: moment().diff(a.date, "days"),
-//       date: new Date(a.date).toDateString(),
-//       time: new Date(a.date).toLocaleTimeString(),
-//       message: a.message,
-//       origin: a.origin,
-//     };
-//   });
-// };
+userSchema.methods.historySort = function () {
+  const history = this.history;
+  return history.reverse().map((a) => {
+    return {
+      hourApart: moment().diff(a.date, "hours"),
+      dayApart: moment().diff(a.date, "days"),
+      date: new Date(a.date).toDateString(),
+      time: new Date(a.date).toLocaleTimeString(),
+      message: a.message,
+      origin: a.origin,
+    };
+  });
+};
 
 const User = mongoose.model("user", userSchema);
 

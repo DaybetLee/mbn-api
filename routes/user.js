@@ -128,20 +128,15 @@ router.get("/:id", [authentication, validateID], async (req, res) => {
 
 router.delete("/:id", validateID, async (req, res) => {
   const user = await User.findByIdAndRemove(req.params.id);
-  return user
-    ? res
-        .header("x-auth-token", token)
-        .header("access-control-expose-headers", "x-auth-token")
-        .send(user)
-    : res.status(404).send("User Not Found");
+  return user ? res.send(user) : res.status(404).send("User Not Found");
 });
 
-// router.get("/:id/history", [authentication, validateID], async (req, res) => {
-//   const user = await User.findById(req.params.id);
-//   return user
-//     ? res.send(user.historySort())
-//     : res.status(404).send("User Not Found");
-// });
+router.get("/:id/history", [authentication, validateID], async (req, res) => {
+  const user = await User.findById(req.params.id);
+  return user
+    ? res.send(user.historySort())
+    : res.status(404).send("User Not Found");
+});
 
 // router.get("/:id/device", [authentication, validateID], async (req, res) => {
 //   console.log("hi");
