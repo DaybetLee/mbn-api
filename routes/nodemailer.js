@@ -29,7 +29,11 @@ router.post("/alert", [decrypt, deviceAuth], async (req, res) => {
 
   const output = `
   <p>Hi ${user.firstName} ${user.lastName},</p>
- <p>${req.device.name} has received parcel.</p>
+   <p>${req.device.name} has received parcel.</p>
+    <footer>
+      <hr>
+      <span style="font-weight: bold">This is an automatically generated message. Please do not reply to this email. </span><a href="https://mailboxnotifica.herokuapp.com/">https://mailboxnotifica.herokuapp.com</a>
+    </footer>
     `;
 
   let transporter = nodemailer.createTransport({
@@ -65,7 +69,7 @@ router.post("/verify", [authentication], async (req, res) => {
       user.email
     }</span>) by confirming your email address.</p>
     <p>${config.get("domainUrl")}/verify/${user.generateAuthToken()}</p>
-    <p>If the link above doesn't work, login to your account tp generate a new verification email.</p>
+    <p>If the link above doesn't work, login to your account to generate a new verification email.</p>
     <footer>
       <hr>
       <a href="https://mailboxnotifica.herokuapp.com/">https://mailboxnotifica.herokuapp.com</a>

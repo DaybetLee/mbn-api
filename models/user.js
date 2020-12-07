@@ -73,7 +73,7 @@ userSchema.methods.generateAuthToken = function () {
   return jwt.sign(
     { _id: this._id, verified: this.verified },
     config.get("secretKey"),
-    { expiresIn: "1h" }
+    { expiresIn: 60 * 10 }
   );
 };
 
@@ -110,7 +110,7 @@ const validate = (body) => {
       .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
       .required(),
     password: jpc(option).required(),
-    rep_pass: Joi.ref("password"),
+    rep_pass: Joi.ref("password").label("Confirm Password"),
   }).with("password", "rep_pass");
   return schema.validate(body);
 };

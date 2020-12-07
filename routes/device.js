@@ -21,7 +21,7 @@ router.post("/", [authentication, authorization], async (req, res) => {
   if (error) return res.status(400).send(error.details[0].message);
 
   const mac = await Device.findOne({ mac: req.body.mac });
-  if (mac) return res.status(400).send(`${mac} found in database`);
+  if (mac) return res.status(400).send(`${mac.mac} found in database`);
 
   const device = new Device({
     name: req.body.name,

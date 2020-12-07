@@ -4,12 +4,15 @@ const _ = require("lodash");
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 const config = require("config");
+const Joi = require("joi");
 
 const { User, validate } = require("../models/user");
 const authentication = require("../middlewares/authentication");
 const authorization = require("../middlewares/authorization");
 const validateID = require("../middlewares/validateID");
 const winston = require("../utils/winston");
+const { Schema } = require("mongoose");
+const { Device } = require("../models/device");
 
 // router.get("/", [authentication, authorization], (req, res) => {
 //   User.find()
@@ -49,7 +52,7 @@ router.post("/", async (req, res) => {
       user.email
     }</span>) by confirming your email address.</p>
     <p>${config.get("domainUrl")}/verify/${user.generateAuthToken()}</p>
-    <p>If the link above doesn't work, login to your account tp generate a new verification email.</p>
+    <p>If the link above doesn't work, login to your account to generate a new verification email.</p>
     <footer>
       <hr>
       <a href="https://mailboxnotifica.herokuapp.com/">https://mailboxnotifica.herokuapp.com</a>
@@ -135,8 +138,24 @@ router.get("/:id", [authentication, validateID], async (req, res) => {
 });
 
 router.delete("/:id", validateID, async (req, res) => {
-  const user = await User.findByIdAndRemove(req.params.id);
-  return user ? res.send(user) : res.status(404).send("User Not Found");
+  const schema = Joi.object({
+    password: Joi.string().required(),
+  });
+  const { error } = schema.validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+
+  const user = await User.findById(req.params.id);
+
+  const password = await bcrypt.compare(req.body.password, user.password);
+  if (!password) return res.status(404).send("Incorrect Password");
+
+  for (content in user.devices) {
+    const device = await Device.findByIdAndRemove(user.devices[content]._id);
+    if (!device) return res.status(404).send("Device not found");
+  }
+
+  await User.findByIdAndRemove(req.params.id);
+  res.send(null);
 });
 
 router.get("/:id/history", [authentication, validateID], async (req, res) => {
