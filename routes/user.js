@@ -141,7 +141,7 @@ router.delete("/:id", validateID, async (req, res) => {
     password: Joi.string().required().label("Password"),
   });
   const { error } = schema.validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message, req.body);
+  if (error) return res.status(400).send(error.details[0].message);
 
   const user = await User.findById(req.params.id);
 
