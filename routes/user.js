@@ -45,7 +45,15 @@ router.post("/", async (req, res) => {
 
   const output = `
   <p>Hi ${user.firstName} ${user.lastName},</p>
-  <p>${config.get("domainUrl")}/verify/${user.generateAuthToken()}</p>
+    <p>Please complete your MailBoxNotifica account (<span style="font-weight: bold">${
+      user.email
+    }</span>) by confirming your email address.</p>
+    <p>${config.get("domainUrl")}/verify/${user.generateAuthToken()}</p>
+    <p>If the link above doesn't work, login to your account tp generate a new verification email.</p>
+    <footer>
+      <hr>
+      <a href="https://mailboxnotifica.herokuapp.com/">https://mailboxnotifica.herokuapp.com</a>
+    </footer>
     `;
 
   let transporter = nodemailer.createTransport({
