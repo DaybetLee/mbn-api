@@ -11,7 +11,6 @@ const authentication = require("../middlewares/authentication");
 const authorization = require("../middlewares/authorization");
 const validateID = require("../middlewares/validateID");
 const winston = require("../utils/winston");
-const { Schema } = require("mongoose");
 const { Device } = require("../models/device");
 
 // router.get("/", [authentication, authorization], (req, res) => {
@@ -138,8 +137,9 @@ router.get("/:id", [authentication, validateID], async (req, res) => {
 });
 
 router.delete("/:id", validateID, async (req, res) => {
+  winston.info(req.body);
   const schema = Joi.object({
-    password: Joi.string().required(),
+    password: Joi.string().required().label("Password"),
   });
   const { error } = schema.validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
