@@ -137,12 +137,11 @@ router.get("/:id", [authentication, validateID], async (req, res) => {
 });
 
 router.delete("/:id", validateID, async (req, res) => {
-  winston.info(req.body);
   const schema = Joi.object({
     password: Joi.string().required().label("Password"),
   });
   const { error } = schema.validate(req.body);
-  if (error) return res.status(400).send(error.details[0].message);
+  if (error) return res.status(400).send(error.details[0].message, req.body);
 
   const user = await User.findById(req.params.id);
 
