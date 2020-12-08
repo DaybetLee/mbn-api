@@ -113,7 +113,7 @@ const validate = (body) => {
     rep_pass: Joi.any()
       .equal(Joi.ref("password"))
       .required()
-      .label("Confirm password")
+      .label("Password")
       .messages({ "any.only": "{{#label}} does not match" }),
   }).with("password", "rep_pass");
   return schema.validate(body);
