@@ -110,7 +110,11 @@ const validate = (body) => {
       .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
       .required(),
     password: jpc(option).required(),
-    rep_pass: Joi.ref("password").label("Confirm Password"),
+    rep_pass: Joi.any()
+      .equal(Joi.ref("password"))
+      .required()
+      .label("Confirm password")
+      .messages({ "any.only": "{{#label}} does not match" }),
   }).with("password", "rep_pass");
   return schema.validate(body);
 };
