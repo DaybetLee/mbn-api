@@ -9,13 +9,6 @@ const validateID = require("../middlewares/validateID");
 const authentication = require("../middlewares/authentication");
 const authorization = require("../middlewares/authorization");
 
-// router.get("/", (req, res) => {
-//   Device.find()
-//     .sort("mac")
-//     .select("-psk")
-//     .then((device) => res.send(device));
-// });
-
 router.post("/", [authentication, authorization], async (req, res) => {
   const { error } = validate(req.body);
   if (error) return res.status(400).send(error.details[0].message);
@@ -48,47 +41,6 @@ router.post("/", [authentication, authorization], async (req, res) => {
 
   res.send(device);
 });
-
-// router.put(
-//   "/:id",
-//   [validateID, authentication, authorization],
-//   async (req, res) => {
-//     const { error } = validate(req.body);
-//     if (error) return res.status(400).send(error.details[0].message);
-
-//     const current = await Device.findById(req.params.id);
-//     if (!current) return res.status(404).send("Device not found");
-
-//     const device = await Device.findByIdAndUpdate(
-//       req.params.id,
-//       {
-//         $set: {
-//           name: req.body.name || current.name,
-//           mac: req.body.mac || current.mac,
-//           psk:
-//             (await bcrypt.hash(req.body.psk, await bcrypt.genSalt(10))) ||
-//             current.psk,
-//           notify: req.body.notify,
-//         },
-//       },
-//       { new: true }
-//     );
-
-//     if (!device) return res.status(404).send("Device not found");
-
-//     const user = await User.findOne({
-//       "devices._id": req.params.id,
-//     });
-
-//     user.devices.id(req.params.id).name = device.name;
-//     user.devices.id(req.params.id).mac = device.mac;
-//     user.devices.id(req.params.id).psk = device.psk;
-//     user.devices.id(req.params.id).notify = device.notify;
-
-//     await user.save();
-//     res.send(device);
-//   }
-// );
 
 router.patch(
   "/:id",
